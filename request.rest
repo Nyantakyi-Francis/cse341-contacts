@@ -4,3 +4,11 @@ GET http://localhost:3000/contacts
 
 ### Get single contact (replace with actual ID )
 GET http://localhost:3000/contacts/ID_NUMBER
+
+### DEPLOYED - Get all contacts
+GET https://cse341-contacts-b85h.onrender.com/contacts
+
+###
+
+# DEPLOYED - Get single contact (replace  with actual ID)
+GET https://cse341-contacts-b85h.onrender.com/contacts/ID_NUMBER
