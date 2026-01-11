@@ -1,14 +1,85 @@
-### Get all contacts
+### Get all contacts (LOCAL)
 GET http://localhost:3000/contacts
 
+###
 
-### Get single contact (replace with actual ID )
-GET http://localhost:3000/contacts/ID_NUMBER
+### Get single contact (LOCAL) - Replace with actual ID
+GET http://localhost:3000/contacts/YOUR_CONTACT_ID
 
-### DEPLOYED - Get all contacts
+###
+
+### Create new contact (LOCAL)
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Anokye",
+  "email": "aliceanokye@gmail.com",
+  "favoriteColor": "Purple",
+  "birthday": "2005-03-20"
+}
+
+###
+
+### Update contact (LOCAL) - Replace with actual ID
+PUT http://localhost:3000/contacts/YOUR_CONTACT_ID
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Anokye Updated",
+  "email": "aliceanokyeupdated@gmail.com",
+  "favoriteColor": "Purple",
+  "birthday": "2005-03-20"
+}
+
+###
+
+### Delete contact (LOCAL) - Replace with actual ID
+DELETE http://localhost:3000/contacts/the_id
+
+###
+###
+### DEPLOYED API ENDPOINTS
+###
+
+### Get all contacts (DEPLOYED)
 GET https://cse341-contacts-b85h.onrender.com/contacts
 
 ###
 
-# DEPLOYED - Get single contact (replace  with actual ID)
-GET https://cse341-contacts-b85h.onrender.com/contacts/ID_NUMBER
+### Get single contact (DEPLOYED) - Replace with actual ID
+GET https://cse341-contacts-b85h.onrender.com/contacts/YOUR_CONTACT_ID
+
+###
+
+### Create new contact (DEPLOYED)
+POST https://cse341-contacts-b85h.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Charlie",
+  "lastName": "Nkunim",
+  "email": "charlienkunim@gmail.com",
+  "favoriteColor": "Yellow",
+  "birthday": "2001-11-30"
+}
+
+###
+
+### Update contact (DEPLOYED) - Replace with actual ID
+PUT https://cse341-contacts-b85h.onrender.com/contacts/YOUR_CONTACT_ID
+Content-Type: application/json
+
+{
+  "firstName": "Charlie",
+  "lastName": "Nkunim",
+  "email": "charlienkunimupdated@gmail.com",
+  "favoriteColor": "Yellow",
+  "birthday": "2001-11-30"
+}
+###
+
+### Delete contact (DEPLOYED) - Replace with actual ID
+DELETE https://cse341-contacts-b85h.onrender.com/contacts/YOUR_CONTACT_ID
