@@ -2,10 +2,14 @@ const express = require('express');
 const mongodb = require('./db/connect');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.use(express.json());
 
@@ -24,4 +28,4 @@ mongodb.initDb((err) => {
       console.log(`Connected to database and server is running on port ${port}`);
     });
   }
-});
+}); 
