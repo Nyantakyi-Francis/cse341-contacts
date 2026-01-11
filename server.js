@@ -1,17 +1,27 @@
 const express = require('express');
 const mongodb = require('./db/connect');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger-output.json');
 const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Enable CORS for all routes
+// Enable CORS
 app.use(cors());
-
 app.use(express.json());
+
+// Dynamic Swagger setup
+let swaggerDocument = require('./swagger-output.json');
+
+// Override host based on environment
+if (process.env.NODE_ENV === 'production' || process.env.PORT) {
+  swaggerDocument.host = 'cse341-contacts-b85h.onrender.com';
+  swaggerDocument.schemes = ['https'];
+} else {
+  swaggerDocument.host = 'localhost:3000';
+  swaggerDocument.schemes = ['http'];
+}
 
 // Swagger documentation route
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
@@ -28,4 +38,4 @@ mongodb.initDb((err) => {
       console.log(`Connected to database and server is running on port ${port}`);
     });
   }
-}); 
+});
